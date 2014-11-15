@@ -9,6 +9,7 @@
         })
         .state('register', {
         url: '/register',
-        templateUrl: '/Angular/views/register.html'
+        templateUrl: '/Angular/views/register.html',
+        controller:'RegisterCtrl'
     });
 })

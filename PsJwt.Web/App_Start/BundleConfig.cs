@@ -28,7 +28,10 @@ namespace PsJwt.Web
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js", "~/Scripts/AngularUI/ui-router.js",
-                "~/Angular/app.js", "~/Angular/app.config.js"));
+                "~/Angular/app.js", 
+                "~/Angular/app.config.js",
+                "~/Angular/Controllers/*.js",
+                "~/Angular/Directives/*.js"));
         }
     }
 }
