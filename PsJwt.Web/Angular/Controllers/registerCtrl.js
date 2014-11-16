@@ -1,5 +1,5 @@
 ﻿angular.module('psJwtApp')
-    .controller('RegisterCtrl', function($scope, $http, alert) {
+    .controller('RegisterCtrl', function($scope, $http, alert, authToken) {
     $scope.submit = function() {
 
         var url = '/api/auth';
@@ -8,6 +8,7 @@
         $http.post(url, user)
             .success(function(res) {
                 alert('success', 'OK!', 'You are now registered.');
+                authToken.setToken(res.token);
             })
             .error(function(err) {
                 alert('warning', 'Opps!', 'Could not register');
