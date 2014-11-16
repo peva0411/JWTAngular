@@ -39,14 +39,20 @@ namespace PsJwt.Web.Api
         }
     }
 
+    public class RegisterPostViewModel
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+
     public class JwtService
     {
         public string Encode<T>(T payload, string secret)
         {
             var header = new JwtHeader() {Alg = "HS256", Typ = "JWT"};
 
-            var headerJson = JsonConvert.SerializeObject(header);
-            var payloadJson = JsonConvert.SerializeObject(payload);
+            var headerJson = Json.Encode(header) ;
+            var payloadJson = Json.Encode(payload);
 
             var jwt = headerJson.ToBase64() + '.' + payloadJson.ToBase64();
 

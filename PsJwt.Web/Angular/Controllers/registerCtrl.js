@@ -2,8 +2,8 @@
     .controller('RegisterCtrl', function($scope, $http, alert) {
     $scope.submit = function() {
 
-        var url = '/bad';
-        var user = {};
+        var url = '/api/auth';
+        var user = {email:'test@mail.com', password: '123'};
 
         $http.post(url, user)
             .success(function(res) {
