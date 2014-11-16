@@ -186,6 +186,7 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\Controllers\registerCtrl.js" />
     <Content Include="Angular\Directives\sameAs.js" />
+    <Content Include="Angular\Services\alert.js" />
     <Content Include="Angular\Views\main.html" />
     <Content Include="Angular\Views\register.html" />
     <Content Include="Content\bootstrap.css" />
@@ -996,7 +997,6 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Angular\Services\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
