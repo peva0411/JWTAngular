@@ -28,7 +28,9 @@ namespace PsJwt.Web
                       "~/Content/animate.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js", "~/Scripts/AngularUI/ui-router.js",
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js",
+                "~/Scripts/AngularUI/ui-router.js",
+                "~/Scripts/angular-animate.js",
                 "~/Angular/app.js", 
                 "~/Angular/app.config.js",
                 "~/Angular/Controllers/*.js",

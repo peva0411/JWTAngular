@@ -1,1 +1,1 @@
-﻿angular.module('psJwtApp', ['ui.router']);
+﻿angular.module('psJwtApp', ['ui.router', 'ngAnimate']);

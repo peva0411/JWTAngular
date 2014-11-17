@@ -20,14 +20,7 @@
                 <a ui-sref="main" class="navbar-brand">JWT Authorization</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li ui-sref-active="active">
-                        <a ui-sref="main">Home</a>
-                    </li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+                <div ng-include="'/Angular/Views/header.html'"></div>
             </div>
         </div>
     </div>

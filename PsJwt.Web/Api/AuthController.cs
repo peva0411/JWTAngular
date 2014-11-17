@@ -71,6 +71,30 @@ namespace PsJwt.Web.Api
 
             return Encoding.UTF8.GetString(hash).ToBase64();
         }
+
+        public JwtPayload Decode(string token, string secret)
+        {
+            var parts = token.Split('.');
+
+            if (parts.Length != 3) throw new Exception("The token is not the correct length");
+
+            var header = Json.Decode<JwtHeader>(parts[0].FromBase64());
+            var payload = Json.Decode<JwtPayload>(parts[1].FromBase64());
+
+            var rawSignature = parts[0] + "." + parts[1];
+
+            if (!Verify(rawSignature, secret, parts[2]))
+            {
+                throw new Exception("Verification failed");
+            }
+
+            return payload;
+        }
+
+        private bool Verify(string rawSignature, string secret, string signature)
+        {
+            return signature == Sign(rawSignature, secret);
+        }
     }
 
     public static class StringExtensions
@@ -79,6 +103,12 @@ namespace PsJwt.Web.Api
         {
             byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(toEncode);
             return Convert.ToBase64String(toEncodeAsBytes);
+        }
+
+        public static string FromBase64(this string toDecode)
+        {
+            var data = Convert.FromBase64String(toDecode);
+            return Encoding.UTF8.GetString(data);
         }
     }
 

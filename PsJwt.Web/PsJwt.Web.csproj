@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AuthController.cs" />
+    <Compile Include="Api\JobsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -185,10 +186,16 @@
   <ItemGroup>
     <Content Include="Angular\app.config.js" />
     <Content Include="Angular\app.js" />
+    <Content Include="Angular\Controllers\headerCtrl.js" />
+    <Content Include="Angular\Controllers\jobsCtrl.js" />
+    <Content Include="Angular\Controllers\logoutCtrl.js" />
     <Content Include="Angular\Controllers\registerCtrl.js" />
     <Content Include="Angular\Directives\sameAs.js" />
     <Content Include="Angular\Services\alert.js" />
+    <Content Include="Angular\Services\authIntercepter.js" />
     <Content Include="Angular\Services\authToken.js" />
+    <Content Include="Angular\Views\header.html" />
+    <Content Include="Angular\Views\jobs.html" />
     <Content Include="Angular\Views\main.html" />
     <Content Include="Angular\Views\register.html" />
     <Content Include="Content\bootstrap.css" />

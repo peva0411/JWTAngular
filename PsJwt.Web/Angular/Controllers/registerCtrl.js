@@ -8,7 +8,7 @@
         $http.post(url, user)
             .success(function(res) {
                 alert('success', 'OK!', 'You are now registered.');
-                authToken.setToken(res.token);
+                authToken.setToken(res.Token);
             })
             .error(function(err) {
                 alert('warning', 'Opps!', 'Could not register');

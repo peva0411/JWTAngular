@@ -2,7 +2,11 @@
     ViewBag.Title = "Home Page";
 }
 
-<div ui-view></div>
+<div class="row">
+    <div class="ui-view-container">
+        <div ui-view></div>
+    </div>
+</div>
 <div class="alert alert-{{alert.type}} animated main-alert"
      ng-class="{'flipInY':alert.show, 'flipOutY':!alert.show, 'alert-hidden':!alert.hasBeenShown}">
     <strong>
